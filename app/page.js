@@ -1,11 +1,9 @@
-import { Button } from "@/components/ui/button";
-
 export default function Home() {
   return (
-    <div>
-       Spliter
+    <div className="pt-16">
+   
        <br />
-       <Button variant={"destructive"}>Hello</Button>   
+        
     </div>
   );
 }
