@@ -4,7 +4,6 @@ import { useStoreUser } from '@/hooks/use-store-user'
 import { SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 import { LayoutDashboard } from 'lucide-react'
 import Link from 'next/link' 
-import React, { useEffect, useState } from 'react'
 import { BarLoader } from "react-spinners";
 import { usePathname } from 'next/navigation'
 import { Button } from './ui/button'
@@ -12,8 +11,11 @@ import { Authenticated, Unauthenticated } from 'convex/react'
 
 export default function Header() {
 
-  const { isLoading } = useStoreUser()
+  const { isLoading, isAuthenticated } = useStoreUser()
   const path = usePathname()
+
+  console.log("Convex isLoading:", isLoading);
+  console.log("Convex isAuthenticated:", isAuthenticated);
 
   return (
     <header className="fixed top-0 w-full border-b bg-white/95 backdrop-blur z-50 supports-[backdrop-filter]:bg-white/60">
@@ -55,13 +57,13 @@ export default function Header() {
             </Link>
 
             <UserButton
-              appearance={{
-                elements: {
-                  avatarBox: "w-10 h-10",
-                  userButtonPopoverCard: "shadow-xl",
-                  userPreviewMainIdentifier: "font-semibold",
-                },
-              }}
+              // appearance={{
+              //   elements: {
+              //     avatarBox: "w-10 h-10",
+              //     userButtonPopoverCard: "shadow-xl",
+              //     userPreviewMainIdentifier: "font-semibold",
+              //   },
+              // }}
             />
           </Authenticated>
 

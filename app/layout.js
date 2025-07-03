@@ -8,7 +8,7 @@ import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Splitr",
+  title: "Spliter",
   description: "A smart way to split expenses",
 };
 
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/logos/logo-s.png" sizes="any" />
       </head>
-      <body className={`${inter.className}`}>
+      <body className={`${inter.className}`} suppressHydrationWarning={true}>
         <ClerkProvider
           publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
         >
